@@ -1,97 +1,110 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# Application Pepe Nero Restaurant
 
-# Getting Started
+Une application mobile React Native permettant aux utilisateurs de découvrir de nouvelles recettes via l'API The Recettes.
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+## Contexte du projet
 
-## Step 1: Start Metro
+Le restaurant Pepe Nero cherche à améliorer l'expérience de ses utilisateurs en leur permettant de découvrir de nouvelles recettes. Ils ont donc décidé de créer une application mobile qui utilise l'API de The Recettes pour afficher une liste de repas.
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+## Objectifs d'apprentissage
 
-To start the Metro dev server, run the following command from the root of your React Native project:
+- **Compréhension de React Native** : Maîtriser les concepts fondamentaux de React Native CLI, y compris la structure du projet et la création de composants.
+- **Gestion de la Navigation** : Utiliser React Navigation pour créer une navigation fluide entre les écrans de l'application.
+- **Intégration des Composants et Styles** : Utiliser divers composants React Native pour structurer l'interface utilisateur, en personnalisant les styles.
+- **Utilisation d'API Externe** : Intégrer des données de recettes depuis une API externe.
+- **Stockage Local** : Utiliser AsyncStorage pour permettre aux utilisateurs de sauvegarder leurs recettes préférées localement.
+
+## Fonctionnalités du projet
+
+1. **Liste des Recettes** : Afficher une liste de recettes provenant de l'API externe.
+2. **Détails de la Recette** : Créer une vue détaillée pour chaque recette, montrant les ingrédients, les étapes de préparation, et éventuellement une image.
+3. **Ajout de Recettes** : Permettre aux utilisateurs d'ajouter de nouvelles recettes avec des détails complets.
+4. **Stockage Local** : Implémenter le stockage local pour sauvegarder les recettes préférées de l'utilisateur.
+5. **Améliorations optionnelles** : Intégrer des fonctionnalités avancées telles que la recherche de recettes, la catégorisation des recettes, ou des animations.
+6. **Tests et Déploiement** : Tester l'application et déployer sur un émulateur ou un appareil physique.
+
+## Démarrage
+
+> **Remarque** : Assurez-vous d'avoir complété la [configuration de l'environnement React Native](https://reactnative.dev/docs/set-up-your-environment) avant de continuer.
+
+### Étape 1 : Installer les dépendances
 
 ```sh
-# Using npm
-npm start
-
-# OR using Yarn
-yarn start
+# Avec npm
+npm install
+# OU avec Yarn
+yarn install
 ```
 
-## Step 2: Build and run your app
-
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
-
-### Android
+### Étape 2 : Démarrer Metro avec reset du cache
 
 ```sh
-# Using npm
-npm run android
-
-# OR using Yarn
-yarn android
+npx react-native start --reset-cache
 ```
 
-### iOS
+### Étape 3 : Exécuter l'application
 
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
+#### Android
 
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
+```sh
+npx react-native run-android
+```
+
+#### iOS
+
+Pour iOS, installez d'abord les dépendances CocoaPods :
 
 ```sh
 bundle install
-```
-
-Then, and every time you update your native dependencies, run:
-
-```sh
 bundle exec pod install
 ```
 
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
+Puis exécutez l'application :
 
 ```sh
-# Using npm
+# Avec npm
 npm run ios
-
-# OR using Yarn
+# OU avec Yarn
 yarn ios
 ```
 
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
+## Technologies utilisées
 
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
+Le projet utilise les dépendances suivantes (version 0.0.1) :
 
-## Step 3: Modify your app
+### Dépendances principales
+- React 19.0.0
+- React Native 0.78.0
+- React Navigation (Native 7.0.15, Stack 7.1.2)
+- AsyncStorage 2.1.2
+- React Native Gesture Handler 2.24.0
+- React Native Image Picker 8.2.0
+- React Native Reanimated 3.17.1
+- React Native Safe Area Context 5.3.0
+- React Native Screens 4.9.1
+- React Native Vector Icons 10.2.0
 
-Now that you have successfully run the app, let's make changes!
+### Dépendances de développement
+- TypeScript 5.0.4
+- ESLint 8.19.0
+- Jest 29.6.3
+- Prettier 2.8.8
+- Diverses configurations Babel et React Native
 
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
+## Commandes de développement
 
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
+| Commande | Description |
+|---------|-------------|
+| `npx react-native start --reset-cache` | Démarrer le bundler Metro avec reset du cache |
+| `npx react-native run-android` | Construire et exécuter sur Android |
+| `npm run ios` | Construire et exécuter sur iOS |
+| `npm run test` | Exécuter les tests |
+| `npm run lint` | Exécuter le linter |
 
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
+## Configuration requise
 
-## Congratulations! :tada:
+- Node.js >=18
 
-You've successfully run and modified your React Native App. :partying_face:
+## Dépannage
 
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+Si vous rencontrez des problèmes, veuillez consulter le [Guide de dépannage React Native](https://reactnative.dev/docs/troubleshooting).
